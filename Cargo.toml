@@ -1,0 +1,13 @@
+[package]
+name = "pash-rs"
+version = "1.0.0"
+edition = "2024"
+description = "simple password manager - Rust port of pash"
+
+[[bin]]
+name = "pash"
+path = "src/main.rs"
+
+[profile.release]
+strip = true
+lto = true
