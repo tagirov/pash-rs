@@ -11,7 +11,7 @@ use std::path::Path;
 use std::process::{exit, Command, Stdio};
 
 const USAGE: &str = "\
-pash-rs 1.0.0 - simple password manager.
+pash-rs 1.1.0 - simple password manager.
 
 => [a]dd  [name] - Create a new password entry.
 => [c]opy [name] - Copy entry to the clipboard.
@@ -403,6 +403,10 @@ fn main() {
 
     if matches!(command, 'c' | 'd' | 's') && name.is_empty() {
         name = pw_pick();
+
+        // Echo the equivalent command so the picked entry stays
+        // visible in the terminal after fzf tears down its UI.
+        println!("pash {} {name}", args[0]);
     }
 
     if matches!(command, 'a' | 'c' | 'd' | 's') {

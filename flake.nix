@@ -13,7 +13,7 @@
       packages = forAllSystems (pkgs: rec {
         pash-rs = pkgs.rustPlatform.buildRustPackage {
           pname = "pash-rs";
-          version = "1.0.0";
+          version = "1.1.0";
 
           src = self;
           cargoLock.lockFile = ./Cargo.lock;
