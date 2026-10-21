@@ -58,7 +58,16 @@ Omitting `[name]` for `copy`/`del`/`show` opens fzf to pick an entry interactive
 
 ```sh
 pash c            # fuzzy-pick an entry, copy it to the clipboard
-pash c gmail      # show a specific entry
+pash c gmail      # copy a specific entry
+```
+
+After the pick, pash prints the equivalent command (e.g. `pash c gmail`),
+so the chosen entry stays visible in the terminal once fzf closes:
+
+```
+$ pash s
+pash s gmail
+<password>
 ```
 
 Passwords are stored as
